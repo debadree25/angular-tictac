@@ -8,8 +8,9 @@ import { ThrowStmt } from '@angular/compiler';
 })
 export class BoardComponent implements OnInit {
   squares: string[];
-  player: 'X'|'O';
+  player: 'X' | 'O';
   winner: string;
+  nMoves = 0;
   constructor() {
     this.beginGame();
   }
@@ -28,11 +29,18 @@ export class BoardComponent implements OnInit {
   }
 
   move(ind: number) {
+    if (this.winner) {
+      return;
+    }
     if (!this.squares[ind]) {
       this.squares[ind] = this.currentPlayer;
       this.player = (this.player === 'X') ? 'O' : 'X';
+      this.nMoves += 1;
     }
     this.winner = this.getWinner();
+    if (this.nMoves === 9 && !this.winner) {
+      this.winner = 'Draw';
+    }
   }
 
   getWinner(): string {

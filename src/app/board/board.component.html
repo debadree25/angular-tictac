@@ -1,11 +1,9 @@
-<h1>Current Player {{currentPlayer}}</h1>
-
-<button (click)="beginGame()">Start New Game</button>
-
-<h1 *ngIf="winner">Player: {{winner}} has won</h1>
-
-<div class="grid">
-    <div *ngFor="let sq of squares; let i=index" (click)="move(i)">
-        <app-square [move]="sq"></app-square>
+<div class="container">
+    <h1 style="margin-top: 5px;">Current Player {{currentPlayer}}</h1>
+    <button nbButton outline style="margin: 20px;" (click)="beginGame()">Start New Game</button>
+    <div class="grid">
+        <app-square *ngFor="let sq of squares; let i=index" (click)="move(i)" [move]="sq"></app-square>
     </div>
+    <h1 style="margin-top: 5px;" *ngIf="winner && winner!=='Draw'">Player: {{winner}} has won</h1>
+    <h1 style="margin-top: 5px;" *ngIf="winner === 'Draw'">Game is draw</h1>
 </div>

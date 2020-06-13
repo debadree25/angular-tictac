@@ -1,1 +1,3 @@
-<p>{{move}}</p>
+<button nbButton *ngIf="!move">{{ move }}</button>
+<button nbButton hero status="success" *ngIf="move == 'X'">{{ move }}</button>
+<button nbButton hero status="info" *ngIf="move == 'O'">{{ move }}</button>
