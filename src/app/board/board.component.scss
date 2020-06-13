@@ -11,3 +11,10 @@
     justify-content: center;
     flex-direction: column;
 }
+
+@media only screen and (max-width: 375px) {
+    .grid {
+        grid-template-columns: repeat(3, 100px);
+        grid-template-rows: repeat(3, 100px);
+    }
+}

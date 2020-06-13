@@ -22,6 +22,7 @@ export class BoardComponent implements OnInit {
     this.squares = Array(9).fill(null);
     this.winner = '';
     this.player = 'X';
+    this.nMoves = 0;
   }
 
   get currentPlayer() {
