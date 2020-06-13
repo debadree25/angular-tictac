@@ -123,6 +123,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "angular-tictac"
+    }
+  },
+  "defaultProject": "angular-tictac",
+  "cli": {
+    "analytics": "c8db9439-c8e9-42f7-9213-0923b282f25d"
+  }
 }
